@@ -265,6 +265,9 @@ private fun MangaScreenSmallImpl(
             third = state.isAnySelected,
         )
     }
+    val missingCount = remember(state) {
+        state.missingCount
+    }
 
     val internalOnBackPressed = {
         if (isAnySelected) {

@@ -1062,6 +1062,10 @@ class MangaScreenModel(
                 chapters.applyFilters(manga).toList()
             }
 
+            val missingCount by lazy {
+                chapters.count() - processedChapters.count()
+            }
+
             val isAnySelected by lazy {
                 chapters.fastAny { it.selected }
             }
